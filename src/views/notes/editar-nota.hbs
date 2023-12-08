@@ -1,0 +1,27 @@
+{{#each errores}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{text}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/each}}
+<div class="col-lg-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>Editar nota</h3>
+        </div>
+        <div class="card-body">
+            <form action="/notes/editar-nota/{{_id}}?_method=PUT" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <div class="form-group m-2">
+                    <input type="text" name="titulo" class="form-control" placeholder="Titulo" autofocus value="{{titulo}}">
+                </div>
+                <div class="form-group m-2">
+                    <textarea name="descripcion" class="form-control" placeholder="Descripcion">{{descripcion}}</textarea>
+                </div>
+                <div class="form-group d-grid gap-2 m-2">
+                    <Button type="submit" class="btn btn-primary"> Guardar </Button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
